@@ -105,22 +105,21 @@ export default function Home() {
           
           <div className="flex-1 text-center md:text-left space-y-6">
             <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary" data-testid="text-name">
-              Hello, I'm Alex.
+              Hello, I'm Nirvaan.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto md:mx-0" data-testid="text-bio">
-              Researcher and developer working at the intersection of AI, biotechnology, and sustainable energy.
-              Building tools for the future of healthcare and infrastructure.
+              Research and developer working at the intersection of AI, biomedical science, and human-centric design for positive and tangible societal impacts.
             </p>
             
             <div className="flex gap-4 justify-center md:justify-start">
-              <a href="#" className="p-2 text-muted-foreground hover:text-primary transition-colors" data-testid="link-github">
-                <Github className="w-5 h-5" />
-              </a>
               <a href="#" className="p-2 text-muted-foreground hover:text-primary transition-colors" data-testid="link-linkedin">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="mailto:hello@example.com" className="p-2 text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
                 <Mail className="w-5 h-5" />
+              </a>
+              <a href="#" className="p-2 text-muted-foreground hover:text-primary transition-colors" data-testid="link-github">
+                <Github className="w-5 h-5" />
               </a>
             </div>
           </div>
