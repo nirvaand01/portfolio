@@ -65,6 +65,21 @@ const projects = [
   }
 ];
 
+const getCategoryStyles = (category: string) => {
+  switch (category) {
+    case "Research":
+      return "bg-red-50 text-red-700 border-red-100";
+    case "Collaboration":
+      return "bg-blue-50 text-blue-700 border-blue-100";
+    case "Consulting":
+      return "bg-green-50 text-green-700 border-green-100";
+    case "Product":
+      return "bg-purple-50 text-purple-700 border-purple-100";
+    default:
+      return "bg-muted text-muted-foreground";
+  }
+};
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
@@ -133,8 +148,8 @@ export default function Home() {
                 data-testid={`card-project-${index}`}
               >
                 <div className="flex justify-between items-start mb-4">
-                  <div className="space-y-2">
-                    <span className="inline-block px-2 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full">
+                  <div className="space-y-3">
+                    <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full border ${getCategoryStyles(project.category)}`}>
                       {project.category}
                     </span>
                     <h3 className={`text-xl font-semibold transition-colors ${project.link ? 'group-hover:text-primary' : ''}`}>
