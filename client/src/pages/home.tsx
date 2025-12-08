@@ -4,24 +4,64 @@ import avatarImage from "@assets/generated_images/minimalist_abstract_line_art_p
 
 const projects = [
   {
-    title: "Project Alpha",
-    description: "A minimalist dashboard for data visualization using React and D3.",
-    link: "#"
+    title: "IPF Treatment",
+    description: "Multi-omics mechanistic target discovery and quantum-guided inhibitor screening for idiopathic pulmonary fibrosis",
+    link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5858602",
+    category: "Research"
   },
   {
-    title: "Project Beta",
-    description: "E-commerce platform prototype with seamless checkout experience.",
-    link: "#"
+    title: "PNETs Early Detection",
+    description: "Deep learning–based early detection of pancreatic neuroendocrine tumors from imaging data",
+    link: "",
+    category: "Research"
   },
   {
-    title: "Project Gamma",
-    description: "Mobile-first task management application built with React Native.",
-    link: "#"
+    title: "CognAlign",
+    description: "Cognitive-science–aligned multi-agent frameworks for transparent, bias-aware medical triage",
+    link: "https://www.researchsquare.com/article/rs-8272448/v1",
+    category: "Research"
   },
   {
-    title: "Project Delta",
-    description: "AI-powered content generation tool for marketing teams.",
-    link: "#"
+    title: "Precision Medicine CRC",
+    description: "Convolutional neural networks for colorectal tissue classification in precision oncology",
+    link: "https://drive.google.com/file/d/1a3l6iImh6qKuliFYXmV2RaK07-FVkpmB/view?usp=sharing",
+    category: "Collaboration"
+  },
+  {
+    title: "Biomedical VLMs",
+    description: "Vision–language models for multimodal biomedical image classification and reasoning",
+    link: "https://drive.google.com/file/d/1ksuU2lSEysbQXbNYdjX0Ykk2MxvloOfc/view?usp=sharing",
+    category: "Collaboration"
+  },
+  {
+    title: "AquaFuse",
+    description: "Protein-enabled optimization of water-based lithium-ion battery binder manufacturing",
+    link: "https://drive.google.com/file/d/1K5esLNoCI4B51HJsUgQGsYLeUB8E1XZl/view?usp=sharing",
+    category: "Collaboration"
+  },
+  {
+    title: "SuperPatch",
+    description: "Microneedle biosensor platform for minimally invasive early leukemia mi-RNA biomarker sensing",
+    link: "",
+    category: "Consulting"
+  },
+  {
+    title: "Dominican Energy",
+    description: "Decentralized microgrid strategy for resilient, renewable national energy infrastructure",
+    link: "https://drive.google.com/file/d/1k81xtZqPwMNGWr3ksbvDoZ9fNRDlGeX7/view?usp=sharing",
+    category: "Consulting"
+  },
+  {
+    title: "Svach",
+    description: "AI-powered personalized nutrition and wellness guidance for adolescent populations",
+    link: "https://drive.google.com/file/d/1ZL1RpLl1leQwbEQdHvBn-a9tZa0ztYne/view?usp=sharing",
+    category: "Product"
+  },
+  {
+    title: "NonTox",
+    description: "Browser-based natural language processing system for cyberbullying and toxicity detection",
+    link: "https://drive.google.com/file/d/13qpIzsiW0fMypEfnB0BqIn3g-s2_2hlC/view?usp=sharing",
+    category: "Product"
   }
 ];
 
@@ -53,8 +93,8 @@ export default function Home() {
               Hello, I'm Alex.
             </h1>
             <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto md:mx-0" data-testid="text-bio">
-              I'm a creative developer passionate about building digital products that look as good as they function. 
-              Focusing on minimalist design and clean code.
+              Researcher and developer working at the intersection of AI, biotechnology, and sustainable energy.
+              Building tools for the future of healthcare and infrastructure.
             </p>
             
             <div className="flex gap-4 justify-center md:justify-start">
@@ -86,19 +126,26 @@ export default function Home() {
             {projects.map((project, index) => (
               <a 
                 key={index}
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block p-6 rounded-lg border border-border bg-card hover:border-primary/50 hover:shadow-sm transition-all duration-300"
+                href={project.link || undefined}
+                target={project.link ? "_blank" : undefined}
+                rel={project.link ? "noopener noreferrer" : undefined}
+                className={`group block p-6 rounded-lg border border-border bg-card transition-all duration-300 ${project.link ? 'hover:border-primary/50 hover:shadow-sm cursor-pointer' : 'opacity-80 cursor-default'}`}
                 data-testid={`card-project-${index}`}
               >
                 <div className="flex justify-between items-start mb-4">
-                  <h3 className="text-xl font-semibold group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+                  <div className="space-y-2">
+                    <span className="inline-block px-2 py-1 text-xs font-medium bg-muted text-muted-foreground rounded-full">
+                      {project.category}
+                    </span>
+                    <h3 className={`text-xl font-semibold transition-colors ${project.link ? 'group-hover:text-primary' : ''}`}>
+                      {project.title}
+                    </h3>
+                  </div>
+                  {project.link && (
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors opacity-0 group-hover:opacity-100" />
+                  )}
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {project.description}
                 </p>
               </a>
