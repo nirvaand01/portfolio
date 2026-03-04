@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Linkedin, Mail } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Mail, Trophy, MapPin, Calendar } from "lucide-react";
 import avatarImage from "@assets/generated_images/minimalist_abstract_line_art_portrait.png";
+import iitLogo from "@assets/Screenshot_2026-03-04_at_4.34.17_PM_1772622261455.png";
+import aiPlanetLogo from "@assets/Screenshot_2026-03-04_at_4.34.35_PM_1772622277577.png";
 
 const projects = [
   {
@@ -78,22 +80,27 @@ const projects = [
 const awards = [
   {
     title: "Gold Medalist - IRIS National Fair 2026",
+    date: "January 2026",
     description: "Awarded a Gold Medal at the IRIS National Fair, India’s premier national science and engineering competition, for research on Idiopathic Pulmonary Fibrosis. The project was selected among 120 finalists from over 6,000 nationwide registrations and ranked among the top 30 projects nationally. Finalists were further shortlisted for national mentorship camps, from which 20 teams will be selected to represent India at the Regeneron International Science and Engineering Fair 2026.",
   },
   {
     title: "Global Champion Team - MIT SHPE Science and Engineering Competition",
+    date: "November 2025",
     description: "Selected as 1st Place Global Champions out of 300+ participants, from 70+ schools across 20+ countries. Competed in a rigorous advanced entrance exam covering physics, chemistry, biology, and engineering, led a live engineering pitch where our team designed and presented a sustainable decentralised energy solution for the Dominican Republic's overloaded energy system.",
   },
   {
-    title: "Topper - SilverZone International Informatics Olympiad (IIO)",
-    description: "Achieved top ranks in the IIO, ranking 1st in school, earned the 24th highest score in my state, and placed among the top 80 students in South India.",
-  },
-  {
     title: "Finalist - IRIS National Fair 2025 & ISEF Semifinalist",
+    date: "February 2025",
     description: "Conducted research on the implementation of Deep Learning Model Frameworks for detecting Pancreatic Neuroendocrine Tumors (a subset of pancreatic cancer); the project was shortlisted for the All India National Science Fair(2% acceptance rate), leading to recognition as an International Science and Engineering Fair (ISEF) Semifinalist.",
   },
   {
+    title: "Topper - SilverZone International Informatics Olympiad (IIO)",
+    date: "February 2024",
+    description: "Achieved top ranks in the IIO, ranking 1st in school, earned the 24th highest score in my state, and placed among the top 80 students in South India.",
+  },
+  {
     title: "Thalir Innovation Fair - Science and Tech Exhibition",
+    date: "November 2023",
     description: "Presented a machine learning - based solution to address cyberbullying at the state science fair; placed 4th among 50+ participating students and teams.",
   },
 ];
@@ -101,28 +108,44 @@ const awards = [
 const experiences = [
   {
     role: "Research Intern",
-    company: "Visual Learning and Intelligence Lab (VIGIL) - IIT Hyderabad",
-    description: "Working on vision-language model pipelines for improving autonomous vehicles, focusing on visual encoders, cross-modal alignment, and evaluation. Implemented Visual Question Answering (VQA), scene description, and object counting tasks, including experiments under transitional weather conditions, achieving strong result metrics relative to peers. I further explored medical adaptation through pathology-based VQA, analyzing multimodal reasoning over histopathology images under limited and noisy annotations.",
+    company: "Indian Institute of Technology Hyderabad",
+    logo: iitLogo,
+    type: "Internship",
+    date: "Apr 2025 - Present • 1 yr",
+    location: "Hyderabad, Telangana, India",
+    description: "Working on vision-language model pipelines for improving autonomous vehicles, focusing on visual encoders, cross-modal alignment, and evaluation. Implemented Visual Question Answering (VQA), scene description, and object counting tasks, including experiments under transitional weather conditions, achieving strong result metrics relative to peers. Also explored medical adaptation through pathology-based VQA, analyzing multimodal reasoning over histopathology images under limited and noisy annotations.",
   },
   {
-    role: "Researcher",
-    company: "Augmented Health Systems Lab - Ashoka University",
-    description: "Conducted research under Dr. Rintu Kutum and Mr. Gautam Ahuja in Artificial Intelligence, Machine Learning, and Biomedical Imaging. Exploring the integration of deep learning architectures for the early detection of Pancreatic Neuroendocrine Tumors, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer.",
+    role: "Research Intern",
+    company: "Ashoka University",
+    type: "Internship",
+    date: "Jul 2024 - Present • 1 yr 9 mos",
+    location: "Remote",
+    description: "Explored the integration of deep learning architectures for the early detection of Pancreatic Neuroendocrine Tumors, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer.",
   },
   {
     role: "AI Engineer Intern",
     company: "AI Planet",
-    description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, gaining hands-on experience deploying real world AI solutions in a high-stakes environment.",
+    logo: aiPlanetLogo,
+    type: "Internship",
+    date: "May 2025 - Oct 2025 • 6 mos",
+    location: "Hyderabad, Telangana, India",
+    description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Built and debugged 25+ Agentic AI use cases, alongside rigorously testing UI/UX components of products. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, and explored projects involving clients like Bajaj Auto, Lowe's, Psybe Labs, and JioHotstar.",
   },
   {
-    role: "Participant",
-    company: "Stanford AI4ALL",
-    description: "Selected as one out of 30 students(4% acceptance) for a summer program at Stanford University. Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
-  },
-  {
-    role: "Alumnus",
-    company: "The Knowledge Society",
+    role: "Innovator",
+    company: "The Knowledge Society (TKS)",
+    date: "Sep 2024 - Jun 2025 • 10 mos",
+    location: "Global",
     description: "Selected with a 10% acceptance rate to join a global accelerator program for high school innovators. Studied applications of numerous emerging technologies, participated in ideation and build hackathons, and contributed to consulting projects with executives from IKEA and Maverick BioMetals. Led and contributed to projects on Quantum AI for drug discovery as well as less-invasive diagnostics for leukaemia.",
+  },
+  {
+    role: "Participant at Stanford AI4ALL",
+    company: "Stanford Institute for Human-Centered Artificial Intelligence (HAI)",
+    type: "Internship",
+    date: "Jul 2024 - Jul 2024 • 1 mo",
+    location: "Remote",
+    description: "Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
   },
 ];
 
@@ -215,7 +238,7 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="mb-24"
         >
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-4 mb-12">
             <h2 className="text-2xl font-bold" data-testid="heading-experience">
               Experience
             </h2>
@@ -226,19 +249,42 @@ export default function Home() {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:bg-border"
+                className="flex gap-6 group"
                 data-testid={`row-experience-${index}`}
               >
-                <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary" />
-                <div className="flex flex-col gap-1 mb-4">
-                  <h3 className="text-xl font-bold text-foreground">
-                    {exp.role}
-                  </h3>
-                  <p className="text-primary font-medium">{exp.company}</p>
+                <div className="shrink-0">
+                  <div className="w-12 h-12 rounded-lg border border-border bg-muted/30 overflow-hidden flex items-center justify-center">
+                    {exp.logo ? (
+                      <img src={exp.logo} alt={exp.company} className="w-full h-full object-cover" />
+                    ) : (
+                      <span className="text-xs font-bold text-muted-foreground">
+                        {exp.company.charAt(0)}
+                      </span>
+                    )}
+                  </div>
                 </div>
-                <p className="text-muted-foreground leading-relaxed">
-                  {exp.description}
-                </p>
+                <div className="flex-1 space-y-3">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                    <h3 className="text-lg font-bold text-foreground">
+                      {exp.role}
+                    </h3>
+                    <span className="text-sm text-muted-foreground font-medium flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {exp.date}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                    <span className="font-semibold text-primary">{exp.company}</span>
+                    {exp.type && <span className="opacity-60">• {exp.type}</span>}
+                    <span className="flex items-center gap-1 opacity-60">
+                      <MapPin className="w-3 h-3" />
+                      {exp.location}
+                    </span>
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {exp.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>
@@ -306,17 +352,25 @@ export default function Home() {
             <div className="h-px bg-border flex-1" />
           </div>
 
-          <div className="grid grid-cols-1 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {awards.map((award, index) => (
               <div
                 key={index}
-                className="group space-y-2"
+                className="group p-6 rounded-xl bg-[#FDFBF7] border border-[#F2EDE4] space-y-4 hover:shadow-md transition-all duration-300"
                 data-testid={`card-award-${index}`}
               >
-                <h3 className="text-lg font-bold group-hover:text-primary transition-colors">
-                  {award.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm italic">
+                <div className="w-10 h-10 rounded-full bg-orange-100/50 flex items-center justify-center text-orange-600">
+                  <Trophy className="w-5 h-5" strokeWidth={2.5} />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="font-bold text-foreground leading-tight">
+                    {award.title}
+                  </h3>
+                  <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-wider">
+                    {award.date}
+                  </p>
+                </div>
+                <p className="text-muted-foreground leading-relaxed text-xs">
                   {award.description}
                 </p>
               </div>
