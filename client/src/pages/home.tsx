@@ -4,65 +4,75 @@ import avatarImage from "@assets/generated_images/minimalist_abstract_line_art_p
 
 const projects = [
   {
-    title: "IPF Treatment",
-    description: "Multi-omics mechanistic target discovery and quantum-guided inhibitor screening for idiopathic pulmonary fibrosis",
+    title: "Mechanistics-Driven IPF Therapeutics",
+    description:
+      "Multi-omics mechanistic target discovery and quantum-guided inhibitor screening for idiopathic pulmonary fibrosis",
     link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5858602",
-    category: "Research"
+    category: "Research",
   },
   {
     title: "PNETs Early Detection",
-    description: "Deep learning–based early detection of pancreatic neuroendocrine tumors from imaging data",
-    link: "",
-    category: "Research"
+    description:
+      "Deep learning–based early detection of pancreatic neuroendocrine tumors from imaging data",
+    link: "https://www.techrxiv.org/users/909446/articles/1283452",
+    category: "Research",
   },
   {
     title: "CognAlign",
-    description: "Cognitive-science–aligned multi-agent frameworks for transparent, bias-aware medical triage",
+    description:
+      "Cognitive-science–aligned multi-agent frameworks for transparent, bias-aware medical triage",
     link: "https://www.researchsquare.com/article/rs-8272448/v1",
-    category: "Research"
+    category: "Research",
   },
   {
     title: "Precision Medicine CRC",
-    description: "Convolutional neural networks for colorectal tissue classification in precision oncology",
+    description:
+      "Convolutional neural networks for colorectal tissue classification in precision oncology",
     link: "https://drive.google.com/file/d/1a3l6iImh6qKuliFYXmV2RaK07-FVkpmB/view?usp=sharing",
-    category: "Collaboration"
+    category: "Collaboration",
   },
   {
     title: "Biomedical VLMs",
-    description: "Vision–language models for multimodal biomedical image classification and reasoning",
+    description:
+      "Vision–language models for multimodal biomedical image classification and reasoning",
     link: "https://drive.google.com/file/d/1ksuU2lSEysbQXbNYdjX0Ykk2MxvloOfc/view?usp=sharing",
-    category: "Collaboration"
+    category: "Collaboration",
   },
   {
     title: "AquaFuse",
-    description: "Protein-enabled optimization of water-based lithium-ion battery binder manufacturing",
+    description:
+      "Protein-enabled optimization of water-based lithium-ion battery binder manufacturing",
     link: "https://drive.google.com/file/d/1K5esLNoCI4B51HJsUgQGsYLeUB8E1XZl/view?usp=sharing",
-    category: "Collaboration"
+    category: "Consulting",
   },
   {
     title: "SuperPatch",
-    description: "Microneedle biosensor platform for minimally invasive early leukemia mi-RNA biomarker sensing",
-    link: "",
-    category: "Consulting"
+    description:
+      "Microneedle biosensor platform for minimally invasive early leukemia mi-RNA biomarker sensing",
+    link: "https://superpatch.netlify.app/",
+    category: "Collaboration",
   },
   {
     title: "Dominican Energy",
-    description: "Decentralized microgrid strategy for resilient, renewable national energy infrastructure",
+    description:
+      "Decentralized microgrid strategy for resilient, renewable national energy infrastructure",
     link: "https://drive.google.com/file/d/1k81xtZqPwMNGWr3ksbvDoZ9fNRDlGeX7/view?usp=sharing",
-    category: "Consulting"
+    category: "Consulting",
   },
   {
     title: "Svach",
-    description: "AI-powered personalized nutrition and wellness guidance for adolescent populations",
+    description:
+      "AI-powered personalized nutrition and wellness guidance for adolescent populations",
     link: "https://drive.google.com/file/d/1ZL1RpLl1leQwbEQdHvBn-a9tZa0ztYne/view?usp=sharing",
-    category: "Product"
+    category: "Product",
   },
   {
     title: "NonTox",
-    description: "Browser-based natural language processing system for cyberbullying and toxicity detection",
+    description:
+      "Browser-based natural language processing system for cyberbullying and toxicity detection",
     link: "https://drive.google.com/file/d/13qpIzsiW0fMypEfnB0BqIn3g-s2_2hlC/view?usp=sharing",
-    category: "Product"
-  }
+    category: "Product",
+  },
 ];
 
 const getCategoryStyles = (category: string) => {
@@ -84,9 +94,8 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       <main className="container mx-auto px-6 py-24 max-w-4xl">
-        
         {/* Hero Section */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -94,31 +103,54 @@ export default function Home() {
         >
           <div className="shrink-0">
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-muted">
-              <img 
-                src={avatarImage} 
-                alt="Profile" 
+              <img
+                src={avatarImage}
+                alt="Profile"
                 className="w-full h-full object-cover"
                 data-testid="img-avatar"
               />
             </div>
           </div>
-          
+
           <div className="flex-1 text-center md:text-left space-y-6">
-            <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-primary" data-testid="text-name">
+            <h1
+              className="text-4xl md:text-5xl font-bold tracking-tight text-primary"
+              data-testid="text-name"
+            >
               Hello, I'm Nirvaan.
             </h1>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto md:mx-0" data-testid="text-bio">
-              Research and developer working at the intersection of AI, biomedical science, and human-centric design for positive and tangible societal impacts.
+            <p
+              className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto md:mx-0"
+              data-testid="text-bio"
+            >
+              Research and developer working at the intersection of AI,
+              biomedical science, and human-centric design for positive and
+              tangible societal impacts.
             </p>
-            
+
             <div className="flex gap-4 justify-center md:justify-start">
-              <a href="#" className="p-2 text-muted-foreground hover:text-primary transition-colors" data-testid="link-linkedin">
+              <a
+                href="https://www.linkedin.com/in/nirvaanduggirala/"
+                className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-linkedin"
+                target="_blank"
+              >
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="mailto:hello@example.com" className="p-2 text-muted-foreground hover:text-primary transition-colors" data-testid="link-email">
+              <a
+                href="mailto:duggiralanirvaan@gmail.com"
+                className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-email"
+                target="_blank"
+              >
                 <Mail className="w-5 h-5" />
               </a>
-              <a href="#" className="p-2 text-muted-foreground hover:text-primary transition-colors" data-testid="link-github">
+              <a
+                href="https://github.com/nirvaand01"
+                className="p-2 text-muted-foreground hover:text-primary transition-colors"
+                data-testid="link-github"
+                target="_blank"
+              >
                 <Github className="w-5 h-5" />
               </a>
             </div>
@@ -132,26 +164,32 @@ export default function Home() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <div className="flex items-center gap-4 mb-8">
-            <h2 className="text-2xl font-bold" data-testid="heading-projects">Selected Work</h2>
+            <h2 className="text-2xl font-bold" data-testid="heading-projects">
+              Selected Work
+            </h2>
             <div className="h-px bg-border flex-1" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <a 
+              <a
                 key={index}
                 href={project.link || undefined}
                 target={project.link ? "_blank" : undefined}
                 rel={project.link ? "noopener noreferrer" : undefined}
-                className={`group block p-6 rounded-lg border border-border bg-card transition-all duration-300 ${project.link ? 'hover:border-primary/50 hover:shadow-sm cursor-pointer' : 'opacity-80 cursor-default'}`}
+                className={`group block p-6 rounded-lg border border-border bg-card transition-all duration-300 ${project.link ? "hover:border-primary/50 hover:shadow-sm cursor-pointer" : "opacity-80 cursor-default"}`}
                 data-testid={`card-project-${index}`}
               >
                 <div className="flex justify-between items-start mb-4">
                   <div className="space-y-3">
-                    <span className={`inline-block px-3 py-1 text-xs font-medium rounded-full border ${getCategoryStyles(project.category)}`}>
+                    <span
+                      className={`inline-block px-3 py-1 text-xs font-medium rounded-full border ${getCategoryStyles(project.category)}`}
+                    >
                       {project.category}
                     </span>
-                    <h3 className={`text-xl font-semibold transition-colors ${project.link ? 'group-hover:text-primary' : ''}`}>
+                    <h3
+                      className={`text-xl font-semibold transition-colors ${project.link ? "group-hover:text-primary" : ""}`}
+                    >
                       {project.title}
                     </h3>
                   </div>
@@ -166,7 +204,6 @@ export default function Home() {
             ))}
           </div>
         </motion.section>
-
       </main>
     </div>
   );
