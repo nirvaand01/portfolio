@@ -75,6 +75,57 @@ const projects = [
   },
 ];
 
+const awards = [
+  {
+    title: "Gold Medalist - IRIS National Fair 2026",
+    description: "Awarded a Gold Medal at the IRIS National Fair, India’s premier national science and engineering competition, for research on Idiopathic Pulmonary Fibrosis. The project was selected among 120 finalists from over 6,000 nationwide registrations and ranked among the top 30 projects nationally. Finalists were further shortlisted for national mentorship camps, from which 20 teams will be selected to represent India at the Regeneron International Science and Engineering Fair 2026.",
+  },
+  {
+    title: "Global Champion Team - MIT SHPE Science and Engineering Competition",
+    description: "Selected as 1st Place Global Champions out of 300+ participants, from 70+ schools across 20+ countries. Competed in a rigorous advanced entrance exam covering physics, chemistry, biology, and engineering, led a live engineering pitch where our team designed and presented a sustainable decentralised energy solution for the Dominican Republic's overloaded energy system.",
+  },
+  {
+    title: "Topper - SilverZone International Informatics Olympiad (IIO)",
+    description: "Achieved top ranks in the IIO, ranking 1st in school, earned the 24th highest score in my state, and placed among the top 80 students in South India.",
+  },
+  {
+    title: "Finalist - IRIS National Fair 2025 & ISEF Semifinalist",
+    description: "Conducted research on the implementation of Deep Learning Model Frameworks for detecting Pancreatic Neuroendocrine Tumors (a subset of pancreatic cancer); the project was shortlisted for the All India National Science Fair(2% acceptance rate), leading to recognition as an International Science and Engineering Fair (ISEF) Semifinalist.",
+  },
+  {
+    title: "Thalir Innovation Fair - Science and Tech Exhibition",
+    description: "Presented a machine learning - based solution to address cyberbullying at the state science fair; placed 4th among 50+ participating students and teams.",
+  },
+];
+
+const experiences = [
+  {
+    role: "Research Intern",
+    company: "Visual Learning and Intelligence Lab (VIGIL) - IIT Hyderabad",
+    description: "Working on vision-language model pipelines for improving autonomous vehicles, focusing on visual encoders, cross-modal alignment, and evaluation. Implemented Visual Question Answering (VQA), scene description, and object counting tasks, including experiments under transitional weather conditions, achieving strong result metrics relative to peers. I further explored medical adaptation through pathology-based VQA, analyzing multimodal reasoning over histopathology images under limited and noisy annotations.",
+  },
+  {
+    role: "Researcher",
+    company: "Augmented Health Systems Lab - Ashoka University",
+    description: "Conducted research under Dr. Rintu Kutum and Mr. Gautam Ahuja in Artificial Intelligence, Machine Learning, and Biomedical Imaging. Exploring the integration of deep learning architectures for the early detection of Pancreatic Neuroendocrine Tumors, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer.",
+  },
+  {
+    role: "AI Engineer Intern",
+    company: "AI Planet",
+    description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, gaining hands-on experience deploying real world AI solutions in a high-stakes environment.",
+  },
+  {
+    role: "Participant",
+    company: "Stanford AI4ALL",
+    description: "Selected as one out of 30 students(4% acceptance) for a summer program at Stanford University. Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
+  },
+  {
+    role: "Alumnus",
+    company: "The Knowledge Society",
+    description: "Selected with a 10% acceptance rate to join a global accelerator program for high school innovators. Studied applications of numerous emerging technologies, participated in ideation and build hackathons, and contributed to consulting projects with executives from IKEA and Maverick BioMetals. Led and contributed to projects on Quantum AI for drug discovery as well as less-invasive diagnostics for leukaemia.",
+  },
+];
+
 const getCategoryStyles = (category: string) => {
   switch (category) {
     case "Research":
@@ -123,7 +174,7 @@ export default function Home() {
               className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto md:mx-0"
               data-testid="text-bio"
             >
-              Research and developer working at the intersection of AI,
+              Researcher and developer working at the intersection of AI,
               biomedical science, and human-centric design for positive and
               tangible societal impacts.
             </p>
@@ -157,11 +208,48 @@ export default function Home() {
           </div>
         </motion.div>
 
+        {/* Experience Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-24"
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="text-2xl font-bold" data-testid="heading-experience">
+              Experience
+            </h2>
+            <div className="h-px bg-border flex-1" />
+          </div>
+
+          <div className="space-y-12">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:bg-border"
+                data-testid={`row-experience-${index}`}
+              >
+                <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary" />
+                <div className="flex flex-col gap-1 mb-4">
+                  <h3 className="text-xl font-bold text-foreground">
+                    {exp.role}
+                  </h3>
+                  <p className="text-primary font-medium">{exp.company}</p>
+                </div>
+                <p className="text-muted-foreground leading-relaxed">
+                  {exp.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </motion.section>
+
         {/* Projects Grid */}
         <motion.section
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          className="mb-24"
         >
           <div className="flex items-center gap-4 mb-8">
             <h2 className="text-2xl font-bold" data-testid="heading-projects">
@@ -201,6 +289,37 @@ export default function Home() {
                   {project.description}
                 </p>
               </a>
+            ))}
+          </div>
+        </motion.section>
+
+        {/* Awards Section */}
+        <motion.section
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+        >
+          <div className="flex items-center gap-4 mb-8">
+            <h2 className="text-2xl font-bold" data-testid="heading-awards">
+              Awards & Recognition
+            </h2>
+            <div className="h-px bg-border flex-1" />
+          </div>
+
+          <div className="grid grid-cols-1 gap-8">
+            {awards.map((award, index) => (
+              <div
+                key={index}
+                className="group space-y-2"
+                data-testid={`card-award-${index}`}
+              >
+                <h3 className="text-lg font-bold group-hover:text-primary transition-colors">
+                  {award.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm italic">
+                  {award.description}
+                </p>
+              </div>
             ))}
           </div>
         </motion.section>
