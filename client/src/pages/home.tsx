@@ -173,7 +173,21 @@ const getCategoryStyles = (category: string) => {
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
-      <main className="container mx-auto px-6 py-24 max-w-4xl">
+      {/* Navigation */}
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/40">
+        <div className="container mx-auto px-6 h-16 flex items-center justify-between max-w-4xl">
+          <a href="#" className="font-bold text-lg tracking-tight" data-testid="nav-logo">
+            Nirvaan.
+          </a>
+          <div className="hidden sm:flex gap-6 text-sm font-medium text-muted-foreground">
+            <a href="#experience" className="hover:text-primary transition-colors" data-testid="nav-experience">Experience</a>
+            <a href="#projects" className="hover:text-primary transition-colors" data-testid="nav-projects">Selected Work</a>
+            <a href="#awards" className="hover:text-primary transition-colors" data-testid="nav-awards">Awards</a>
+          </div>
+        </div>
+      </nav>
+
+      <main className="container mx-auto px-6 pt-32 pb-24 max-w-4xl">
         {/* Hero Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -239,10 +253,11 @@ export default function Home() {
 
         {/* Experience Section */}
         <motion.section
+          id="experience"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="mb-24"
+          className="mb-24 scroll-mt-24"
         >
           <div className="flex items-center gap-4 mb-12">
             <h2 className="text-2xl font-bold" data-testid="heading-experience">
@@ -298,10 +313,11 @@ export default function Home() {
 
         {/* Projects Grid */}
         <motion.section
+          id="projects"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="mb-24"
+          className="mb-24 scroll-mt-24"
         >
           <div className="flex items-center gap-4 mb-8">
             <h2 className="text-2xl font-bold" data-testid="heading-projects">
@@ -347,9 +363,11 @@ export default function Home() {
 
         {/* Awards Section */}
         <motion.section
+          id="awards"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
+          className="scroll-mt-24"
         >
           <div className="flex items-center gap-4 mb-8">
             <h2 className="text-2xl font-bold" data-testid="heading-awards">
