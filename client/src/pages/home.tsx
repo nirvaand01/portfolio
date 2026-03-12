@@ -31,7 +31,7 @@ const awards = [
   {
     title: "Thalir Innovation Fair - Science and Tech Exhibition",
     date: "November 2023",
-    description: "Presented a machine learning - based solution to address cyberbullying at the state science fair; placed <strong class='text-foreground font-bold'>4th</strong> among <strong class='text-foreground font-bold'>50+ participating students and teams</strong>.",
+    description: "Placed <strong class='text-foreground font-bold'>4th</strong> at a state-level science fair and entrepreneurship competition with <strong class='text-foreground font-bold'>50+ participants and teams</strong> by showcasing a machine learning-based solution to detect and combat cyberbullying.",
   },
 ];
 
