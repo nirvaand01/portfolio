@@ -1,11 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Linkedin, Mail, Trophy, MapPin, Calendar, Award } from "lucide-react";
 import avatarImage from "@assets/generated_images/minimalist_abstract_line_art_portrait.png";
-import iitLogo from "@assets/image_1772622874728.png";
-import ashokaLogo from "@assets/image_1772622880042.png";
-import aiPlanetLogo from "@assets/image_1772622887526.png";
-import tksLogo from "@assets/image_1772622893169.png";
-import ai4allLogo from "@assets/image_1772622922682.png";
 
 const awards = [
   {
@@ -39,7 +34,6 @@ const experiences = [
   {
     role: "Research Intern",
     company: "Indian Institute of Technology Hyderabad",
-    logo: iitLogo,
     type: "Internship",
     date: "Apr 2025 - Present • 1 yr",
     location: "Hyderabad, Telangana, India",
@@ -48,7 +42,6 @@ const experiences = [
   {
     role: "Research Intern",
     company: "Ashoka University",
-    logo: ashokaLogo,
     type: "Internship",
     date: "Jul 2024 - Present • 1 yr 9 mos",
     location: "Remote",
@@ -57,7 +50,6 @@ const experiences = [
   {
     role: "AI Engineer Intern",
     company: "AI Planet",
-    logo: aiPlanetLogo,
     type: "Internship",
     date: "May 2025 - Oct 2025 • 6 mos",
     location: "Hyderabad, Telangana, India",
@@ -66,7 +58,6 @@ const experiences = [
   {
     role: "Innovator",
     company: "The Knowledge Society (TKS)",
-    logo: tksLogo,
     date: "Sep 2024 - Jun 2025 • 10 mos",
     location: "Global",
     description: "Selected with a 10% acceptance rate to join a global accelerator program for high school innovators. Studied applications of numerous emerging technologies, participated in ideation and build hackathons, and contributed to consulting projects with executives from IKEA and Maverick BioMetals. Led and contributed to projects on Quantum AI for drug discovery as well as less-invasive diagnostics for leukaemia.",
@@ -74,7 +65,6 @@ const experiences = [
   {
     role: "Participant at Stanford AI4ALL",
     company: "Stanford Institute for Human-Centered Artificial Intelligence (HAI)",
-    logo: ai4allLogo,
     type: "Internship",
     date: "Jul 2024 - Jul 2024 • 1 mo",
     location: "Remote",
@@ -270,20 +260,12 @@ export default function Home() {
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="flex gap-6 group"
+                className="group relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-[-2rem] last:before:bottom-0 before:w-px before:bg-border"
                 data-testid={`row-experience-${index}`}
               >
-                <div className="shrink-0">
-                  <div className="w-12 h-12 rounded-lg border border-border bg-white overflow-hidden flex items-center justify-center p-1 shadow-sm">
-                    {exp.logo ? (
-                      <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain" />
-                    ) : (
-                      <span className="text-xs font-bold text-muted-foreground">
-                        {exp.company.charAt(0)}
-                      </span>
-                    )}
-                  </div>
-                </div>
+                {/* Timeline Dot */}
+                <div className="absolute left-[-4.5px] top-2.5 w-[10px] h-[10px] rounded-full bg-primary ring-4 ring-background z-10 transition-transform group-hover:scale-125" />
+                
                 <div className="flex-1 space-y-3">
                   <div className="flex flex-col md:flex-row md:items-center justify-between gap-1">
                     <h3 className="text-lg font-bold text-foreground">
