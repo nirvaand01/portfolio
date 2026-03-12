@@ -1,4 +1,6 @@
+import { motion } from "framer-motion";
 import { ExternalLink, Github, Linkedin, Mail, Trophy, MapPin, Calendar, Award } from "lucide-react";
+import avatarImage from "@assets/generated_images/minimalist_abstract_line_art_portrait.png";
 import iitLogo from "@assets/image_1772622874728.png";
 import ashokaLogo from "@assets/image_1772622880042.png";
 import aiPlanetLogo from "@assets/image_1772622887526.png";
@@ -77,6 +79,79 @@ const experiences = [
     date: "Jul 2024 - Jul 2024 • 1 mo",
     location: "Remote",
     description: "Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
+  },
+];
+
+const projects = [
+  {
+    title: "Mechanistics-Driven IPF Therapeutics",
+    description:
+      "Multi-omics mechanistic target discovery and quantum-guided inhibitor screening for idiopathic pulmonary fibrosis",
+    link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5858602",
+    category: "Research",
+  },
+  {
+    title: "PNETs Early Detection",
+    description:
+      "Deep learning–based early detection of pancreatic neuroendocrine tumors from imaging data",
+    link: "https://www.techrxiv.org/users/909446/articles/1283452",
+    category: "Research",
+  },
+  {
+    title: "CognAlign",
+    description:
+      "Cognitive-science–aligned multi-agent frameworks for transparent, bias-aware medical triage",
+    link: "https://www.researchsquare.com/article/rs-8272448/v1",
+    category: "Research",
+  },
+  {
+    title: "Precision Medicine CRC",
+    description:
+      "Convolutional neural networks for colorectal tissue classification in precision oncology",
+    link: "https://drive.google.com/file/d/1a3l6iImh6qKuliFYXmV2RaK07-FVkpmB/view?usp=sharing",
+    category: "Collaboration",
+  },
+  {
+    title: "Biomedical VLMs",
+    description:
+      "Vision–language models for multimodal biomedical image classification and reasoning",
+    link: "https://drive.google.com/file/d/1ksuU2lSEysbQXbNYdjX0Ykk2MxvloOfc/view?usp=sharing",
+    category: "Collaboration",
+  },
+  {
+    title: "AquaFuse",
+    description:
+      "Protein-enabled optimization of water-based lithium-ion battery binder manufacturing",
+    link: "https://drive.google.com/file/d/1K5esLNoCI4B51HJsUgQGsYLeUB8E1XZl/view?usp=sharing",
+    category: "Consulting",
+  },
+  {
+    title: "SuperPatch",
+    description:
+      "Microneedle biosensor platform for minimally invasive early leukemia mi-RNA biomarker sensing",
+    link: "https://superpatch.netlify.app/",
+    category: "Collaboration",
+  },
+  {
+    title: "Dominican Energy",
+    description:
+      "Decentralized microgrid strategy for resilient, renewable national energy infrastructure",
+    link: "https://drive.google.com/file/d/1k81xtZqPwMNGWr3ksbvDoZ9fNRDlGeX7/view?usp=sharing",
+    category: "Consulting",
+  },
+  {
+    title: "Svach",
+    description:
+      "AI-powered personalized nutrition and wellness guidance for adolescent populations",
+    link: "https://drive.google.com/file/d/1ZL1RpLl1leQwbEQdHvBn-a9tZa0ztYne/view?usp=sharing",
+    category: "Product",
+  },
+  {
+    title: "NonTox",
+    description:
+      "Browser-based natural language processing system for cyberbullying and toxicity detection",
+    link: "https://drive.google.com/file/d/13qpIzsiW0fMypEfnB0BqIn3g-s2_2hlC/view?usp=sharing",
+    category: "Product",
   },
 ];
 
