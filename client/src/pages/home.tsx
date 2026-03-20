@@ -53,7 +53,7 @@ const experiences = [
     type: "Internship",
     date: "May 2025 - Oct 2025 • 6 mos",
     location: "Hyderabad, Telangana, India",
-    description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Built and debugged 25+ Agentic AI use cases, alongside rigorously testing UI/UX components of products. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, and explored projects involving clients like Bajaj Auto, Lowe's, Psybe Labs, and JioHotstar.",
+    description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Built and debugged 25+ Agentic AI use cases, alongside rigorously testing UI/UX components of products. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, and explored projects involving MNC clients.",
   },
   {
     role: "Innovator",
