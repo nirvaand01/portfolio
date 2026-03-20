@@ -35,7 +35,8 @@ const experiences = [
     role: "Researcher",
     company: "National Institute of Pharmaceutical Education and Research Hyderabad",
     type: "Internship",
-    date: "Nov 2025 - Present",
+    startDate: "Nov 2025",
+    endDate: "Present",
     location: "Hyderabad, Telangana, India",
     description: "Conducted multi-modal in vitro assays in human fibroblast models to functionally validate candidate therapeutic targets in pulmonary fibrosis, integrating qRT-PCR, Western blotting, Immunohistochemistry, and Immunofluorescence to quantify fibrogenic pathway activation and ECM remodeling.",
   },
@@ -43,7 +44,8 @@ const experiences = [
     role: "Research Intern",
     company: "Indian Institute of Technology Hyderabad",
     type: "Internship",
-    date: "Apr 2025 - Present",
+    startDate: "Apr 2025",
+    endDate: "Present",
     location: "Hyderabad, Telangana, India",
     description: "Working on vision-language model pipelines for improving autonomous vehicles, focusing on visual encoders, cross-modal alignment, and evaluation. Implemented Visual Question Answering (VQA), scene description, and object counting tasks, including experiments under transitional weather conditions, achieving strong result metrics relative to peers. Also explored medical adaptation through pathology-based VQA, analyzing multimodal reasoning over histopathology images under limited and noisy annotations.",
   },
@@ -51,7 +53,8 @@ const experiences = [
     role: "Research Intern",
     company: "Ashoka University",
     type: "Internship",
-    date: "Jul 2024 - Present",
+    startDate: "Jul 2024",
+    endDate: "Present",
     location: "Remote",
     description: "Explored the integration of deep learning architectures for the early detection of Pancreatic Neuroendocrine Tumors, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer.",
   },
@@ -59,14 +62,16 @@ const experiences = [
     role: "AI Engineer Intern",
     company: "AI Planet",
     type: "Internship",
-    date: "May 2025 - Oct 2025",
+    startDate: "May 2025",
+    endDate: "Oct 2025",
     location: "Hyderabad, Telangana, India",
     description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Built and debugged 25+ Agentic AI use cases, alongside rigorously testing UI/UX components of products. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, and explored projects involving MNC clients.",
   },
   {
     role: "Innovator",
     company: "The Knowledge Society (TKS)",
-    date: "Sep 2024 - Jun 2025",
+    startDate: "Sep 2024",
+    endDate: "Jun 2025",
     location: "Global",
     description: "Selected with a 10% acceptance rate to join a global accelerator program for high school innovators. Studied applications of numerous emerging technologies, participated in ideation and build hackathons, and contributed to consulting projects with executives from IKEA and Maverick BioMetals. Led and contributed to projects on Quantum AI for drug discovery as well as less-invasive diagnostics for leukaemia.",
   },
@@ -74,7 +79,8 @@ const experiences = [
     role: "Participant at Stanford AI4ALL",
     company: "Stanford Institute for Human-Centered Artificial Intelligence (HAI)",
     type: "Internship",
-    date: "Jul 2024 - Jul 2024",
+    startDate: "Jul 2024",
+    endDate: "Jul 2024",
     location: "Remote",
     description: "Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
   },
@@ -166,6 +172,28 @@ const getCategoryStyles = (category: string) => {
     default:
       return "bg-muted text-muted-foreground";
   }
+};
+
+const formatExperienceDate = (startDate: string, endDate: string) => {
+  const start = new Date(startDate);
+  const end = endDate === "Present" ? new Date() : new Date(endDate);
+  
+  const y1 = start.getFullYear();
+  const m1 = start.getMonth();
+  const y2 = end.getFullYear();
+  const m2 = end.getMonth();
+  
+  let totalMonths = (y2 - y1) * 12 + (m2 - m1) + 1; // +1 to make inclusive
+  if (totalMonths <= 0) totalMonths = 1;
+  
+  const yrs = Math.floor(totalMonths / 12);
+  const mos = totalMonths % 12;
+  
+  let duration = [];
+  if (yrs > 0) duration.push(`${yrs} yr${yrs > 1 ? 's' : ''}`);
+  if (mos > 0) duration.push(`${mos} mo${mos > 1 ? 's' : ''}`);
+  
+  return `${startDate} - ${endDate} • ${duration.join(' ')}`;
 };
 
 export default function Home() {
@@ -281,7 +309,7 @@ export default function Home() {
                     </h3>
                     <span className="text-sm text-muted-foreground font-medium flex items-center gap-1">
                       <Calendar className="w-3.5 h-3.5" />
-                      {exp.date}
+                      {formatExperienceDate(exp.startDate, exp.endDate)}
                     </span>
                   </div>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
