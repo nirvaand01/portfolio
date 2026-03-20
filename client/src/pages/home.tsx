@@ -32,15 +32,6 @@ const awards = [
 
 const experiences = [
   {
-    role: "Researcher",
-    company: "National Institute of Pharmaceutical Education and Research Hyderabad",
-    type: "Internship",
-    startDate: "Nov 2025",
-    endDate: "Present",
-    location: "Hyderabad, Telangana, India",
-    description: "Conducted multi-modal in vitro assays in human fibroblast models to functionally validate candidate therapeutic targets in pulmonary fibrosis, integrating qRT-PCR, Western blotting, Immunohistochemistry, and Immunofluorescence to quantify fibrogenic pathway activation and ECM remodeling.",
-  },
-  {
     role: "Research Intern",
     company: "Indian Institute of Technology Hyderabad",
     type: "Internship",
