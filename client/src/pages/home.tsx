@@ -408,6 +408,13 @@ export default function Home() {
                 data-testid="img-avatar"
               />
             </div>
+            <p
+              className="mt-3 flex items-center justify-center gap-1 text-xs text-muted-foreground"
+              data-testid="text-avatar-caption"
+            >
+              <MapPin className="w-3 h-3" />
+              Lóndrangar, Iceland
+            </p>
           </div>
 
           <div className="flex-1 text-center md:text-left space-y-6">
