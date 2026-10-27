@@ -409,9 +409,9 @@ export default function Home() {
               className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto md:mx-0"
               data-testid="text-bio"
             >
-              Researcher and developer working at the intersection of AI,
-              biomedical science, and human-centric design for positive and
-              tangible societal impacts.
+              Researcher, engineer, and developer working at the intersection
+              of biomedical science, AI, and human-centric design for positive
+              and tangible societal impacts.
             </p>
 
             <div className="flex gap-4 justify-center md:justify-start">
