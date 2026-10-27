@@ -58,7 +58,6 @@ const awards = [
 type Experience = {
   role: string;
   company: string;
-  type?: string;
   startDate: string;
   endDate: string;
   location?: string;
@@ -81,8 +80,9 @@ const experiences: Experience[] = [
     company: "CognAlign",
     startDate: "Sep 2025",
     endDate: "Present",
+    location: "Hyderabad, Telangana, India",
     icon: Brain,
-    description: "Founded and led research on a modular, multi-agent medical triage system combining computer science and cognitive science to improve transparency, reduce bias, and support emergency decision-making. Integrated machine learning and small language models into low-latency medical report explanation and risk-analysis tools for large-scale medical camps serving rural communities. Authored a research paper recognized as an IRIS National finalist.",
+    description: "Founded and led research on a modular, multi-agent medical triage system combining computer science and cognitive science to improve transparency, reduce bias, and support emergency decision-making. Integrated machine learning and small language models into low-latency medical report explanation and risk-analysis tools for large-scale medical camps serving rural communities.",
   },
   {
     role: "Research Assistant",
@@ -105,16 +105,15 @@ const experiences: Experience[] = [
   {
     role: "Hardware & Software Intern",
     company: "Avinya NeuroTech",
-    type: "Internship",
     startDate: "Jun 2026",
     endDate: "Jul 2026",
+    location: "Hyderabad, Telangana, India",
     icon: Cpu,
     description: "Worked across machine learning and hardware engineering for medical-grade, indigenous AI-powered neuro and cardio monitoring devices. Designed and soldered EEG and ECG PCBs from scratch, covering schematics, signal amplification, analog-to-digital conversion, and power protection, and integrated communication protocols for signal acquisition. Built ML models for EEG signal classification on raw neural data and researched global medical device regulatory standards.",
   },
   {
     role: "AI Engineer Intern",
     company: "AI Planet",
-    type: "Internship",
     startDate: "May 2025",
     endDate: "Oct 2025",
     location: "Hyderabad, Telangana, India",
@@ -133,10 +132,9 @@ const experiences: Experience[] = [
   {
     role: "Participant at Stanford AI4ALL",
     company: "Stanford Institute for Human-Centered Artificial Intelligence (HAI)",
-    type: "Internship",
     startDate: "Jul 2024",
     endDate: "Jul 2024",
-    location: "Remote",
+    location: "Global",
     icon: GraduationCap,
     description: "Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
   },
@@ -327,7 +325,6 @@ function ExperienceTimeline() {
                   </div>
                   <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
                     <span className="font-semibold text-primary">{exp.company}</span>
-                    {exp.type && <span className="opacity-60">• {exp.type}</span>}
                     {exp.location && (
                       <span className="flex items-center gap-1 opacity-60">
                         <MapPin className="w-3 h-3" />
