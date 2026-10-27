@@ -1,53 +1,107 @@
-import { motion } from "framer-motion";
-import { ExternalLink, Github, Linkedin, Mail, Trophy, MapPin, Calendar, Award } from "lucide-react";
-import avatarImage from "@assets/generated_images/minimalist_abstract_line_art_portrait.png";
+import { useRef, useState } from "react";
+import { motion, useScroll, useSpring } from "framer-motion";
+import {
+  ExternalLink, Github, Linkedin, Mail, MapPin, Calendar, Award,
+  FlaskConical, ScanEye, Microscope, Cpu, Bot, Rocket, GraduationCap,
+  type LucideIcon,
+} from "lucide-react";
+import avatarImage from "@assets/generated_images/avatar.webp";
 
 const awards = [
   {
     title: "Gold Medalist - IRIS National Fair 2026",
-    date: "January 2026",
+    date: "2026",
     description: "Awarded a Gold Medal at the IRIS National Fair, India’s premier national science and engineering competition, for research on Idiopathic Pulmonary Fibrosis. The project was selected among <strong class='text-foreground font-bold'>120 finalists</strong> from over <strong class='text-foreground font-bold'>6,000 nationwide registrations</strong> and ranked among the <strong class='text-foreground font-bold'>top 30 projects</strong> nationally. Finalists were further shortlisted for national mentorship camps, from which <strong class='text-foreground font-bold'>20 teams</strong> will be selected to represent India at the Regeneron International Science and Engineering Fair 2026.",
   },
   {
+    title: "Silver Medalist - Eskom Expo International Science Fair",
+    date: "2026",
+    description: "Following the IRIS gold medal, shortlisted to represent <strong class='text-foreground font-bold'>Team India</strong> at the Eskom Expo International Science Fair in Johannesburg, South Africa, as one of <strong class='text-foreground font-bold'>four projects</strong> selected from <strong class='text-foreground font-bold'>6,000+ national entries</strong>. Competed among <strong class='text-foreground font-bold'>340 finalists</strong> from <strong class='text-foreground font-bold'>11 countries</strong> and won a <strong class='text-foreground font-bold'>Silver Medal</strong> in the Biomedical Sciences category out of 30+ participants.",
+  },
+  {
+    title: "3x Finalist - IRIS National Fair & Honorable Mention + 2x Finalist - INSEF",
+    date: "2024 - 2026",
+    description: "Selected as a finalist at the IRIS National Fair <strong class='text-foreground font-bold'>three times</strong>, for research on pancreatic neuroendocrine tumor detection, cognitive-science-aligned medical triage (CognAlign), and Idiopathic Pulmonary Fibrosis. Also recognized at the Indian National Science & Engineering Fair (INSEF) as a <strong class='text-foreground font-bold'>two-time finalist</strong> and <strong class='text-foreground font-bold'>Honorable Mention</strong> recipient.",
+  },
+  {
     title: "Global Champion Team - MIT SHPE Science and Engineering Competition",
-    date: "November 2025",
+    date: "2025",
     description: "Selected as <strong class='text-foreground font-bold'>1st Place Global Champions</strong> out of <strong class='text-foreground font-bold'>300+ participants</strong>, from <strong class='text-foreground font-bold'>70+ schools</strong> across <strong class='text-foreground font-bold'>20+ countries</strong>. Competed in a rigorous advanced entrance exam covering physics, chemistry, biology, and engineering, led a live engineering pitch where our team designed and presented a sustainable decentralised energy solution for the Dominican Republic's overloaded energy system.",
   },
   {
-    title: "Finalist - IRIS National Fair 2025 & ISEF Semifinalist",
-    date: "February 2025",
-    description: "Conducted research on the implementation of Deep Learning Model Frameworks for detecting Pancreatic Neuroendocrine Tumors (a subset of pancreatic cancer); the project was shortlisted for the All India National Science Fair (<strong class='text-foreground font-bold'>2% acceptance rate</strong>), leading to recognition as an International Science and Engineering Fair (<strong class='text-foreground font-bold'>ISEF</strong>) Semifinalist.",
+    title: "1st Place - American Mathematics Competition (AMC) 12",
+    date: "2025",
+    description: "Achieved a <strong class='text-foreground font-bold'>first place rank</strong> for both <strong class='text-foreground font-bold'>AMC 12A</strong> and <strong class='text-foreground font-bold'>AMC 12B</strong> in the 2025-2026 examination cycle.",
+  },
+  {
+    title: "Distinction - CEMC Fermat Contest",
+    date: "2026",
+    description: "Achieved <strong class='text-foreground font-bold'>distinction</strong> in the 2026 Fermat Contest organised by the Centre for Education in Mathematics and Computing (CEMC), University of Waterloo.",
+  },
+  {
+    title: "Distinction - Avogadro Chemistry Exam",
+    date: "2026",
+    description: "Achieved <strong class='text-foreground font-bold'>distinction</strong> in the 2026 Avogadro Chemistry Exam organised by the University of Waterloo.",
   },
   {
     title: "Topper - SilverZone International Informatics Olympiad (IIO)",
-    date: "February 2024",
+    date: "2024",
     description: "Achieved top ranks in the IIO, ranking <strong class='text-foreground font-bold'>1st in school</strong>, earned the <strong class='text-foreground font-bold'>24th highest score</strong> in my state, and placed among the <strong class='text-foreground font-bold'>top 80 students</strong> in South India.",
   },
   {
     title: "Thalir Innovation Fair - Science and Tech Exhibition",
-    date: "November 2023",
+    date: "2023",
     description: "Placed <strong class='text-foreground font-bold'>4th</strong> at a state-level science fair and entrepreneurship competition with <strong class='text-foreground font-bold'>50+ participants and teams</strong> by showcasing a machine learning-based solution to detect and combat cyberbullying.",
   },
 ];
 
-const experiences = [
+type Experience = {
+  role: string;
+  company: string;
+  type?: string;
+  startDate: string;
+  endDate: string;
+  location?: string;
+  icon: LucideIcon;
+  description: string;
+};
+
+const experiences: Experience[] = [
   {
-    role: "Research Intern",
+    role: "Research Assistant",
+    company: "National Institute of Pharmaceutical Education and Research (NIPER)",
+    startDate: "Oct 2025",
+    endDate: "Present",
+    location: "Hyderabad, Telangana, India",
+    icon: FlaskConical,
+    description: "Applying computational, statistical, and biochemical approaches to the diagnosis and treatment of Idiopathic Pulmonary Fibrosis (IPF), a rare lung disease with no known cause or cure. Identified and experimentally validated novel biomarkers and therapeutic targets driving disease onset and persistence, and discovered selective candidate drug molecules using quantum machine learning and computational chemistry, validated through molecular docking and dynamics.",
+  },
+  {
+    role: "Research Assistant",
     company: "Indian Institute of Technology Hyderabad",
-    type: "Internship",
     startDate: "Apr 2025",
     endDate: "Present",
     location: "Hyderabad, Telangana, India",
+    icon: ScanEye,
     description: "Working on vision-language model pipelines for improving autonomous vehicles, focusing on visual encoders, cross-modal alignment, and evaluation. Implemented Visual Question Answering (VQA), scene description, and object counting tasks, including experiments under transitional weather conditions, achieving strong result metrics relative to peers. Also explored medical adaptation through pathology-based VQA, analyzing multimodal reasoning over histopathology images under limited and noisy annotations.",
   },
   {
-    role: "Research Intern",
+    role: "Research Assistant",
     company: "Ashoka University",
-    type: "Internship",
     startDate: "Jul 2024",
     endDate: "Present",
     location: "Remote",
-    description: "Explored the integration of deep learning architectures for the early detection of Pancreatic Neuroendocrine Tumors, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer.",
+    icon: Microscope,
+    description: "Explored the integration of deep learning architectures for the early detection of Pancreatic Neuroendocrine Tumors, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer. Also working with single cell biology and transcriptomics to investigate cell-specific mechanisms and molecular pathways involved in liver fibrosis.",
+  },
+  {
+    role: "Hardware & Software Intern",
+    company: "Avinya NeuroTech",
+    type: "Internship",
+    startDate: "Jun 2026",
+    endDate: "Jul 2026",
+    icon: Cpu,
+    description: "Worked across machine learning and hardware engineering for medical-grade, indigenous AI-powered neuro and cardio monitoring devices. Designed and soldered EEG and ECG PCBs from scratch, covering schematics, signal amplification, analog-to-digital conversion, and power protection, and integrated communication protocols for signal acquisition. Built ML models for EEG signal classification on raw neural data and researched global medical device regulatory standards.",
   },
   {
     role: "AI Engineer Intern",
@@ -56,6 +110,7 @@ const experiences = [
     startDate: "May 2025",
     endDate: "Oct 2025",
     location: "Hyderabad, Telangana, India",
+    icon: Bot,
     description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Built and debugged 25+ Agentic AI use cases, alongside rigorously testing UI/UX components of products. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, and explored projects involving MNC clients.",
   },
   {
@@ -64,6 +119,7 @@ const experiences = [
     startDate: "Sep 2024",
     endDate: "Jun 2025",
     location: "Global",
+    icon: Rocket,
     description: "Selected with a 10% acceptance rate to join a global accelerator program for high school innovators. Studied applications of numerous emerging technologies, participated in ideation and build hackathons, and contributed to consulting projects with executives from IKEA and Maverick BioMetals. Led and contributed to projects on Quantum AI for drug discovery as well as less-invasive diagnostics for leukaemia.",
   },
   {
@@ -73,17 +129,27 @@ const experiences = [
     startDate: "Jul 2024",
     endDate: "Jul 2024",
     location: "Remote",
+    icon: GraduationCap,
     description: "Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
   },
 ];
 
-const projects = [
+type Project = {
+  title: string;
+  description: string;
+  link: string;
+  category: string;
+  note?: string;
+};
+
+const projects: Project[] = [
   {
     title: "Mechanistics-Driven IPF Therapeutics",
     description:
       "Multi-omics mechanistic target discovery and quantum-guided inhibitor screening for idiopathic pulmonary fibrosis",
     link: "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5858602",
     category: "Research",
+    note: "Early preprint · since revised",
   },
   {
     title: "PNETs Early Detection",
@@ -91,6 +157,7 @@ const projects = [
       "Deep learning–based early detection of pancreatic neuroendocrine tumors from imaging data",
     link: "https://www.techrxiv.org/users/909446/articles/1283452",
     category: "Research",
+    note: "Early preprint · since revised",
   },
   {
     title: "CognAlign",
@@ -98,27 +165,21 @@ const projects = [
       "Cognitive-science–aligned multi-agent frameworks for transparent, bias-aware medical triage",
     link: "https://www.researchsquare.com/article/rs-8272448/v1",
     category: "Research",
+    note: "Early preprint · since revised",
   },
   {
     title: "Precision Medicine CRC",
     description:
       "Convolutional neural networks for colorectal tissue classification in precision oncology",
-    link: "https://drive.google.com/file/d/1a3l6iImh6qKuliFYXmV2RaK07-FVkpmB/view?usp=sharing",
+    link: "/papers/crc.pdf",
     category: "Collaboration",
   },
   {
     title: "Biomedical VLMs",
     description:
       "Vision–language models for multimodal biomedical image classification and reasoning",
-    link: "https://drive.google.com/file/d/1ksuU2lSEysbQXbNYdjX0Ykk2MxvloOfc/view?usp=sharing",
+    link: "/papers/vlms.pdf",
     category: "Collaboration",
-  },
-  {
-    title: "AquaFuse",
-    description:
-      "Protein-enabled optimization of water-based lithium-ion battery binder manufacturing",
-    link: "https://drive.google.com/file/d/1K5esLNoCI4B51HJsUgQGsYLeUB8E1XZl/view?usp=sharing",
-    category: "Consulting",
   },
   {
     title: "SuperPatch",
@@ -128,24 +189,31 @@ const projects = [
     category: "Collaboration",
   },
   {
+    title: "AquaFuse",
+    description:
+      "Protein-enabled optimization of water-based lithium-ion battery binder manufacturing",
+    link: "/papers/aquafuse.pdf",
+    category: "Consulting",
+  },
+  {
     title: "Dominican Energy",
     description:
       "Decentralized microgrid strategy for resilient, renewable national energy infrastructure",
-    link: "https://drive.google.com/file/d/1k81xtZqPwMNGWr3ksbvDoZ9fNRDlGeX7/view?usp=sharing",
+    link: "/papers/dominican-energy.pdf",
     category: "Consulting",
   },
   {
     title: "Svach",
     description:
       "AI-powered personalized nutrition and wellness guidance for adolescent populations",
-    link: "https://drive.google.com/file/d/1ZL1RpLl1leQwbEQdHvBn-a9tZa0ztYne/view?usp=sharing",
+    link: "/papers/svach.pdf",
     category: "Product",
   },
   {
     title: "NonTox",
     description:
       "Browser-based natural language processing system for cyberbullying and toxicity detection",
-    link: "https://drive.google.com/file/d/13qpIzsiW0fMypEfnB0BqIn3g-s2_2hlC/view?usp=sharing",
+    link: "/papers/nontox.pdf",
     category: "Product",
   },
 ];
@@ -187,7 +255,101 @@ const formatExperienceDate = (startDate: string, endDate: string) => {
   return `${startDate} - ${endDate} • ${duration.join(' ')}`;
 };
 
+function ExperienceTimeline() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start 75%", "end 60%"],
+  });
+  const lineScale = useSpring(scrollYProgress, { stiffness: 120, damping: 30, mass: 0.3 });
+
+  return (
+    <div ref={containerRef} className="relative">
+      {/* Base track + scroll-linked progress line */}
+      <div className="absolute left-[19px] top-2 bottom-2 w-px bg-border" />
+      <motion.div
+        className="absolute left-[19px] top-2 bottom-2 w-px bg-primary origin-top"
+        style={{ scaleY: lineScale }}
+      />
+
+      <div className="space-y-6">
+        {experiences.map((exp, index) => {
+          const isCurrent = exp.endDate === "Present";
+          const Icon = exp.icon;
+          return (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 32 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+              transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="group relative pl-14"
+              data-testid={`row-experience-${index}`}
+            >
+              {/* Timeline marker */}
+              <motion.div
+                initial={{ scale: 0.6, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+                transition={{ duration: 0.4, delay: 0.1 }}
+                className="absolute left-0 top-4 w-10 h-10 rounded-full bg-background border border-border flex items-center justify-center text-primary z-10 transition-all duration-300 group-hover:border-primary group-hover:bg-primary group-hover:text-primary-foreground"
+              >
+                <Icon className="w-[18px] h-[18px]" strokeWidth={1.75} />
+              </motion.div>
+
+              <div className="rounded-xl border border-transparent p-4 -m-px transition-all duration-300 group-hover:border-border group-hover:bg-card group-hover:shadow-sm group-hover:-translate-y-0.5">
+                <div className="space-y-3">
+                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-1">
+                    <h3 className="text-lg font-bold text-foreground flex items-center gap-2">
+                      {exp.role}
+                      {isCurrent && (
+                        <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100 text-[10px] font-semibold uppercase tracking-wider">
+                          <span className="relative flex w-1.5 h-1.5">
+                            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75 animate-ping" />
+                            <span className="relative inline-flex w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                          </span>
+                          Current
+                        </span>
+                      )}
+                    </h3>
+                    <span className="text-sm text-muted-foreground font-medium flex items-center gap-1 shrink-0">
+                      <Calendar className="w-3.5 h-3.5" />
+                      {formatExperienceDate(exp.startDate, exp.endDate)}
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
+                    <span className="font-semibold text-primary">{exp.company}</span>
+                    {exp.type && <span className="opacity-60">• {exp.type}</span>}
+                    {exp.location && (
+                      <span className="flex items-center gap-1 opacity-60">
+                        <MapPin className="w-3 h-3" />
+                        {exp.location}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-muted-foreground leading-relaxed text-sm">
+                    {exp.description}
+                  </p>
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+const fadeUp = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "0px 0px -10% 0px" },
+  transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const },
+};
+
 export default function Home() {
+  const [avatarLoaded, setAvatarLoaded] = useState(false);
+
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
       {/* Navigation */}
@@ -213,11 +375,19 @@ export default function Home() {
           className="flex flex-col md:flex-row gap-12 items-center md:items-start mb-24"
         >
           <div className="shrink-0">
-            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-muted">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-muted bg-muted">
               <img
                 src={avatarImage}
                 alt="Profile"
-                className="w-full h-full object-cover"
+                width={160}
+                height={160}
+                decoding="async"
+                fetchPriority="high"
+                ref={(el) => {
+                  if (el?.complete) setAvatarLoaded(true);
+                }}
+                onLoad={() => setAvatarLoaded(true)}
+                className={`w-full h-full object-cover transition-opacity duration-500 ${avatarLoaded ? "opacity-100" : "opacity-0"}`}
                 data-testid="img-avatar"
               />
             </div>
@@ -283,49 +453,13 @@ export default function Home() {
             <div className="h-px bg-border flex-1" />
           </div>
 
-          <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="group relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-[-2rem] last:before:bottom-0 before:w-px before:bg-border"
-                data-testid={`row-experience-${index}`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-[-4.5px] top-2.5 w-[10px] h-[10px] rounded-full bg-primary ring-4 ring-background z-10 transition-transform group-hover:scale-125" />
-                
-                <div className="flex-1 space-y-3">
-                  <div className="flex flex-col md:flex-row md:items-center justify-between gap-1">
-                    <h3 className="text-lg font-bold text-foreground">
-                      {exp.role}
-                    </h3>
-                    <span className="text-sm text-muted-foreground font-medium flex items-center gap-1">
-                      <Calendar className="w-3.5 h-3.5" />
-                      {formatExperienceDate(exp.startDate, exp.endDate)}
-                    </span>
-                  </div>
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted-foreground">
-                    <span className="font-semibold text-primary">{exp.company}</span>
-                    {exp.type && <span className="opacity-60">• {exp.type}</span>}
-                    <span className="flex items-center gap-1 opacity-60">
-                      <MapPin className="w-3 h-3" />
-                      {exp.location}
-                    </span>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ExperienceTimeline />
         </motion.section>
 
         {/* Projects Grid */}
         <motion.section
           id="projects"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          {...fadeUp}
           className="mb-24 scroll-mt-24"
         >
           <div className="flex items-center gap-4 mb-8">
@@ -347,11 +481,18 @@ export default function Home() {
               >
                 <div className="flex justify-between items-start mb-4">
                   <div className="space-y-3">
-                    <span
-                      className={`inline-block px-3 py-1 text-xs font-medium rounded-full border ${getCategoryStyles(project.category)}`}
-                    >
-                      {project.category}
-                    </span>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span
+                        className={`inline-block px-3 py-1 text-xs font-medium rounded-full border ${getCategoryStyles(project.category)}`}
+                      >
+                        {project.category}
+                      </span>
+                      {project.note && (
+                        <span className="text-[11px] italic text-muted-foreground">
+                          {project.note}
+                        </span>
+                      )}
+                    </div>
                     <h3
                       className={`text-xl font-semibold transition-colors ${project.link ? "group-hover:text-primary" : ""}`}
                     >
@@ -373,9 +514,7 @@ export default function Home() {
         {/* Awards Section */}
         <motion.section
           id="awards"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
+          {...fadeUp}
           className="scroll-mt-24"
         >
           <div className="flex items-center gap-4 mb-8">
