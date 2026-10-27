@@ -392,7 +392,7 @@ export default function Home() {
           className="flex flex-col md:flex-row gap-12 items-center md:items-start mb-24"
         >
           <div className="shrink-0">
-            <div className="mx-auto w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-muted bg-muted">
+            <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-2 border-muted bg-muted">
               <img
                 src={avatarImage}
                 alt="Profile"
@@ -407,17 +407,6 @@ export default function Home() {
                 className={`w-full h-full object-cover transition-opacity duration-500 ${avatarLoaded ? "opacity-100" : "opacity-0"}`}
                 data-testid="img-avatar"
               />
-            </div>
-            <div
-              className="mt-4 mx-auto w-max whitespace-nowrap rounded-lg border border-blue-100 bg-blue-50/50 px-3 py-2 text-center"
-              data-testid="text-avatar-caption"
-            >
-              <p className="text-[10px] font-bold uppercase tracking-wider text-blue-600">
-                Fun fact
-              </p>
-              <p className="mt-0.5 text-xs text-muted-foreground">
-                This photo was taken in Iceland 🇮🇸
-              </p>
             </div>
           </div>
 
