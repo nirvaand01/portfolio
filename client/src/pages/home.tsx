@@ -73,7 +73,7 @@ const experiences: Experience[] = [
     endDate: "Present",
     location: "Hyderabad, Telangana, India",
     icon: FlaskConical,
-    description: "Applying computational, statistical, and biochemical approaches to the diagnosis and treatment of Idiopathic Pulmonary Fibrosis (IPF), a rare lung disease with no known cause or cure. Identified and experimentally validated novel biomarkers and therapeutic targets driving disease onset and persistence, and discovered selective candidate drug molecules using quantum machine learning and computational chemistry, validated through molecular docking and dynamics.",
+    description: "Applying computational, statistical, and biochemical approaches to the diagnosis and treatment of **Idiopathic Pulmonary Fibrosis (IPF)**, a rare lung disease with no known cause or cure. Identified and experimentally validated **novel biomarkers and therapeutic targets** driving disease onset and persistence, and discovered selective candidate drug molecules using **quantum machine learning** and computational chemistry, validated through **molecular docking and dynamics**.",
   },
   {
     role: "Founder and Researcher",
@@ -82,7 +82,7 @@ const experiences: Experience[] = [
     endDate: "Present",
     location: "Hyderabad, Telangana, India",
     icon: Brain,
-    description: "Founded and led research on a modular, multi-agent medical triage system combining computer science and cognitive science to improve transparency, reduce bias, and support emergency decision-making. Integrated machine learning and small language models into low-latency medical report explanation and risk-analysis tools for large-scale medical camps serving rural communities.",
+    description: "Founded and led research on a modular, **multi-agent medical triage system** combining computer science and **cognitive science** to improve transparency, reduce bias, and support emergency decision-making. Integrated machine learning and **small language models** into low-latency medical report explanation and risk-analysis tools for large-scale medical camps serving **rural communities**.",
   },
   {
     role: "Research Assistant",
@@ -91,7 +91,7 @@ const experiences: Experience[] = [
     endDate: "Present",
     location: "Hyderabad, Telangana, India",
     icon: ScanEye,
-    description: "Working on vision-language model pipelines for improving autonomous vehicles, focusing on visual encoders, cross-modal alignment, and evaluation. Implemented Visual Question Answering (VQA), scene description, and object counting tasks, including experiments under transitional weather conditions, achieving strong result metrics relative to peers. Also explored medical adaptation through pathology-based VQA, analyzing multimodal reasoning over histopathology images under limited and noisy annotations.",
+    description: "Working on **vision-language model pipelines** for improving **autonomous vehicles**, focusing on visual encoders, cross-modal alignment, and evaluation. Implemented **Visual Question Answering (VQA)**, scene description, and object counting tasks, including experiments under transitional weather conditions, achieving strong result metrics relative to peers. Also explored medical adaptation through **pathology-based VQA**, analyzing multimodal reasoning over histopathology images under limited and noisy annotations.",
   },
   {
     role: "Research Assistant",
@@ -100,7 +100,7 @@ const experiences: Experience[] = [
     endDate: "Present",
     location: "Remote",
     icon: Microscope,
-    description: "Explored the integration of deep learning architectures for the early detection of Pancreatic Neuroendocrine Tumors, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer. Also working with single cell biology and transcriptomics to investigate cell-specific mechanisms and molecular pathways involved in liver fibrosis.",
+    description: "Explored the integration of deep learning architectures for the **early detection of Pancreatic Neuroendocrine Tumors**, a rare subtype of Pancreatic Cancer accounting for less than 2% of pancreatic cancer. Also working with **single cell biology and transcriptomics** to investigate cell-specific mechanisms and molecular pathways involved in **liver fibrosis**.",
   },
   {
     role: "Hardware & Software Intern",
@@ -109,7 +109,7 @@ const experiences: Experience[] = [
     endDate: "Jul 2026",
     location: "Hyderabad, Telangana, India",
     icon: Cpu,
-    description: "Worked across machine learning and hardware engineering for medical-grade, indigenous AI-powered neuro and cardio monitoring devices. Designed and soldered EEG and ECG PCBs from scratch, covering schematics, signal amplification, analog-to-digital conversion, and power protection, and integrated communication protocols for signal acquisition. Built ML models for EEG signal classification on raw neural data and researched global medical device regulatory standards.",
+    description: "Worked across machine learning and hardware engineering for **medical-grade**, indigenous AI-powered neuro and cardio monitoring devices. Designed and soldered **EEG and ECG PCBs from scratch**, covering schematics, signal amplification, analog-to-digital conversion, and power protection, and integrated communication protocols for signal acquisition. Built ML models for **EEG signal classification** on raw neural data and researched global medical device regulatory standards.",
   },
   {
     role: "AI Engineer Intern",
@@ -118,7 +118,7 @@ const experiences: Experience[] = [
     endDate: "Oct 2025",
     location: "Hyderabad, Telangana, India",
     icon: Bot,
-    description: "Worked on a fast-paced startup engineering team building AI agents and internal tools, contributing to production workflows for clients in healthcare and finance. Built and debugged 25+ Agentic AI use cases, alongside rigorously testing UI/UX components of products. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, and explored projects involving MNC clients.",
+    description: "Worked on a fast-paced startup engineering team building **AI agents** and internal tools, contributing to production workflows for clients in **healthcare and finance**. Built and debugged **25+ Agentic AI use cases**, alongside rigorously testing UI/UX components of products. Led migration of a multi-component AI agent use case interface under tight deadlines for a demo, and explored projects involving MNC clients.",
   },
   {
     role: "Innovator",
@@ -127,7 +127,7 @@ const experiences: Experience[] = [
     endDate: "Jun 2025",
     location: "Global",
     icon: Rocket,
-    description: "Selected with a 10% acceptance rate to join a global accelerator program for high school innovators. Studied applications of numerous emerging technologies, participated in ideation and build hackathons, and contributed to consulting projects with executives from IKEA and Maverick BioMetals. Led and contributed to projects on Quantum AI for drug discovery as well as less-invasive diagnostics for leukaemia.",
+    description: "Selected with a **10% acceptance rate** to join a global accelerator program for high school innovators. Studied applications of numerous emerging technologies, participated in ideation and build hackathons, and contributed to consulting projects with executives from **IKEA and Maverick BioMetals**. Led and contributed to projects on **Quantum AI for drug discovery** as well as less-invasive diagnostics for leukaemia.",
   },
   {
     role: "Participant at Stanford AI4ALL",
@@ -136,7 +136,7 @@ const experiences: Experience[] = [
     endDate: "Jul 2024",
     location: "Global",
     icon: GraduationCap,
-    description: "Collaborated with Stanford graduate mentors & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing BiomedCLIP for the Zero-Shot Classification of diseases from datasets such as PneumoniaMNIST.",
+    description: "Collaborated with **Stanford graduate mentors** & peers to explore advanced AI/ML/DL concepts, with a focus on medical AI. Developed a project using Vision Language Models for Biomedical Image Analysis, implementing **BiomedCLIP** for the **Zero-Shot Classification** of diseases from datasets such as PneumoniaMNIST.",
   },
 ];
 
@@ -261,6 +261,18 @@ const formatExperienceDate = (startDate: string, endDate: string) => {
   return `${startDate} - ${endDate} • ${duration.join(' ')}`;
 };
 
+// Renders **phrase** as bold, matching the emphasis style used in awards.
+const renderEmphasis = (text: string) =>
+  text.split(/\*\*(.+?)\*\*/g).map((part, i) =>
+    i % 2 === 1 ? (
+      <strong key={i} className="text-foreground font-semibold">
+        {part}
+      </strong>
+    ) : (
+      part
+    ),
+  );
+
 function ExperienceTimeline() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -333,7 +345,7 @@ function ExperienceTimeline() {
                     )}
                   </div>
                   <p className="text-muted-foreground leading-relaxed text-sm">
-                    {exp.description}
+                    {renderEmphasis(exp.description)}
                   </p>
                 </div>
               </div>
