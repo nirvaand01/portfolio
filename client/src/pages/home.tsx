@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { motion, useScroll, useSpring } from "framer-motion";
 import {
   ExternalLink, Github, Linkedin, Mail, MapPin, Calendar, Award,
-  FlaskConical, ScanEye, Microscope, Cpu, Bot, Rocket, GraduationCap,
+  FlaskConical, Brain, ScanEye, Microscope, Cpu, Bot, Rocket, GraduationCap,
   type LucideIcon,
 } from "lucide-react";
 import avatarImage from "@assets/generated_images/avatar.webp";
@@ -75,6 +75,14 @@ const experiences: Experience[] = [
     location: "Hyderabad, Telangana, India",
     icon: FlaskConical,
     description: "Applying computational, statistical, and biochemical approaches to the diagnosis and treatment of Idiopathic Pulmonary Fibrosis (IPF), a rare lung disease with no known cause or cure. Identified and experimentally validated novel biomarkers and therapeutic targets driving disease onset and persistence, and discovered selective candidate drug molecules using quantum machine learning and computational chemistry, validated through molecular docking and dynamics.",
+  },
+  {
+    role: "Founder and Researcher",
+    company: "CognAlign",
+    startDate: "Sep 2025",
+    endDate: "Present",
+    icon: Brain,
+    description: "Founded and led research on a modular, multi-agent medical triage system combining computer science and cognitive science to improve transparency, reduce bias, and support emergency decision-making. Integrated machine learning and small language models into low-latency medical report explanation and risk-analysis tools for large-scale medical camps serving rural communities. Authored a research paper recognized as an IRIS National finalist.",
   },
   {
     role: "Research Assistant",
